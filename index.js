@@ -5,7 +5,10 @@
 const puppeteer = require('puppeteer');
 
 async function helloWorld() {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        headless: false,
+        slowMo: 250
+    });
     const page = await browser.newPage();
 
     await page.goto('https://en.wikipedia.org/wiki/%22Hello,_World!%22_program');
@@ -58,7 +61,10 @@ async function pdf() {
  * Take a screenshot
  */
 async function performSearch() {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        headless: false,
+        slowMo: 250
+    });
     const page = await browser.newPage();
 
     await page.goto('https://alligator.io/');
